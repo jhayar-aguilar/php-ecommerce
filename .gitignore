@@ -1,0 +1,6 @@
+edit.php
+delete.php
+Controller/deleteProduct_backend.php
+Controller/editProduct_backend.php
+Controller/Connection.php
+Assets/CSS/style.css

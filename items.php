@@ -3,8 +3,6 @@
 include('Model/Product.php');
 include('Model/Category.php');
 
-include('Controller/items_backend.php');
-
 $p = new Product;
 $c = new Category;
 
@@ -17,13 +15,14 @@ session_start();
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>E-commerce</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="icon" href="Assets/Images/cart.ico">
 </head>
 
-<body>
+<body style="margin: 0;">
 
 	<header>
 		<nav class="navbar justify-content-center navbar-expand-sm bg-dark navbar-dark">
@@ -41,24 +40,10 @@ session_start();
 
 		<h3 class="border-bottom p-1"><?php echo $_GET['categoryName'] . ':'; ?></h3>
 
-		<div class="row m-3 text-center">
+		<div class="row mb-3 text-center">
 			<?php echo $p -> GetProductByCategory(); ?>
 		</div>
-
-		<div class="row">
-			<div class="col-sm-6">
-				<a class="btn btn-info btn-block text-white" href="addCategory.php">
-					<i class="fa fa-tag"></i> Add a Category
-				</a>
-			</div>
-
-			<div class="col-sm-6">
-				<a class="btn btn-info btn-block text-white" href="addProduct.php">
-					<i class="fa fa-dropbox"></i> Add a Product
-				</a>
-			</div>
-		</div>
-
+		<br/><br/><br/><br/>
 		<!-- Pagination -->
 		<!-- <ul class="pagination mt-3">
 			<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
@@ -68,6 +53,18 @@ session_start();
 		</ul> -->
 
 	</div>
+
+	<footer class="bg-dark">
+
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+			<a class="btn btn-dark btn-block text-white" href="addCategory.php">
+				<i class="fa fa-tag"></i> Add a Category
+			</a>
+			<a class="btn btn-dark btn-block text-white" href="addProduct.php">
+				<i class="fa fa-dropbox"></i> Add a Product
+			</a>
+		</nav>
+	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>

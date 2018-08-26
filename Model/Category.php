@@ -1,5 +1,7 @@
 <?php
 
+include('Controller/Connection.php');
+
 class Category{
 
 	public function DisplayCategories($value){
@@ -10,7 +12,6 @@ class Category{
 		$query = "SELECT CategoryName FROM Category";
 
 		$records = $conn->query($query);
-		//$rows = num_rows($records);
 
 		if($records->num_rows > 0){
 			while($item = $records->fetch_assoc()){
@@ -34,7 +35,6 @@ class Category{
 		$query = "SELECT CategoryName FROM Category";
 
 		$records = $conn->query($query);
-		//$rows = num_rows($records);
 
 		if($records->num_rows > 0){
 			while($item = $records->fetch_assoc())

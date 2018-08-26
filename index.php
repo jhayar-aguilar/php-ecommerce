@@ -1,8 +1,6 @@
 <?php
 include('Model/Category.php');
 
-include('Controller/index_backend.php');
-
 $c = new Category;
 
 ?>
